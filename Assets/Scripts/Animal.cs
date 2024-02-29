@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
+    string animalName = "";
+    int animalSpeed = 0;
+    int animalHealth = 0;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +17,6 @@ public class Animal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+         
     }
 }
