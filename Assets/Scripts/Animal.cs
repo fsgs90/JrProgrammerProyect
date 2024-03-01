@@ -6,28 +6,37 @@ using TMPro;
 
 public class Animal : MonoBehaviour
 {
-    string animalName = "Animal";
+    // Examples of encapsulation
+    private string animalName = "Animal";
+    public string AnimalName
+    {
+        get { return animalName; }  
+        set { animalName = value; }
+    }
+
     int animalSpeed = 5;
+    public int AnimalSpeed
+    {
+        get { return animalSpeed; }
+        set { animalSpeed = value; }
+    }
+
     int animalHealth = 5;
+    public int AnimalHealth
+    {
+        get { return animalHealth; }
+        set { animalHealth = value; }
+    }
 
     public Text nameText;
     public Text healthText;
     public Text speedText;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            print("The left mouse button was pressed");
-            UpdateDisplay();
-        } 
-    }
-
+    // Example of abstraction - Updating the text displyed with information inside a function called UpdateDisplay
     public virtual void UpdateDisplay()
     {
         nameText.text = ("Name: " + animalName);
-        healthText.text = "Health: 5";
-        speedText.text = "Speed: 5";
+        healthText.text = "Health: " + animalHealth.ToString();
+        speedText.text = "Speed: " + animalSpeed.ToString();
     }
 }
